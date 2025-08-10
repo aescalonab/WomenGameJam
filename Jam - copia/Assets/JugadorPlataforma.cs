@@ -5,18 +5,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
-using UnityEditor.Experimental.GraphView;
 public class JugadorPlataforma : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] List<Image> corazones;
     [SerializeField] SpriteRenderer jugador;
     [SerializeField] ParticleSystem particulas;
-    [SerializeField] TextMeshProUGUI t;
+    [SerializeField] TextMeshProUGUI []t;
     [SerializeField] GameObject teclas;
     [Header("Estadisticas")]
     [SerializeField] int vida;
-    [SerializeField] int moneda;
+    [SerializeField] int [] moneda;
     [SerializeField] float fuerzaEmpuje;
     private float inmune;
     [Header("Movimiento")]
@@ -45,7 +44,6 @@ public class JugadorPlataforma : MonoBehaviour
     {
         Invoke(te, 10);
         teclas.transform.DOScale(new Vector3(0.8f,0.8f,0.8f), 0.5f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.OutSine).OnUpdate(MoverTeclas);
-        moneda = 0;
         gravedad = rd.gravityScale;
         gravedadOrg = gravedad;
     }
@@ -108,8 +106,20 @@ public class JugadorPlataforma : MonoBehaviour
         if(collision.gameObject.CompareTag(m))
         {
             collision.gameObject.SetActive(false);
-            moneda++;
-            t.text = "x" + moneda.ToString();
+            TipoDeColeccionable top = collision.GetComponent<TipoDeColeccionable>();
+            if(t!=null)
+            {
+               for(int a=0;a<t.Length;a++)
+                {
+                    if(top.tipo==a)
+                    {
+                        moneda[a]++;
+                        t[a].text = "x" + moneda[a].ToString();
+                        break;
+                    }
+                    
+                }
+            }
         }
         if (collision.gameObject.CompareTag(ban))
         {
