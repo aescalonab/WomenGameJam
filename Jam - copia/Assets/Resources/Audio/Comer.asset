@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132566a9cbea14f5c8bc60520d9b45cb, type: 3}
+  m_Name: Comer
+  m_EditorClassIdentifier: 
+  Clips:
+  - {fileID: 8300000, guid: 4a8e81aed2f4b224e887bd2ad67a154c, type: 3}
+  - {fileID: 8300000, guid: 8ec3eac5a39298b4d965e8de53abe07f, type: 3}
+  - {fileID: 8300000, guid: dc880a039f125bf46a90214693974017, type: 3}
+  Volume:
+    minValue: 1
+    maxValue: 1
+  Pitch:
+    minValue: 1
+    maxValue: 1
+  Loop: 0
+  UseAdvancedOptions: 0
+  StereoPan: 0
+  Priority: 128
+  Use3DSound: 0
+  MinDistance: 1
+  MaxDistance: 500
+  DopplerLevel: 1
+  Spread: 0
+  VolumeRolloff: 0
+  ForcePlayToEnd: 0

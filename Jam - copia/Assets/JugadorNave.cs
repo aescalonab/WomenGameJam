@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Code.Audio;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -7,11 +8,13 @@ using UnityEngine.SceneManagement;
 
 public class JugadorNave : MonoBehaviour
 {
+    [SerializeField] Menu menu;
     [SerializeField] Rigidbody2D rd;
     [SerializeField] Animator an;
     [SerializeField] TextMeshProUGUI t;
     [SerializeField] bool pasivo;
     [SerializeField] int puntos;
+    [SerializeField] int maxPuntos=25;
     [SerializeField] int vida;
     [SerializeField] SpriteRenderer jugador;
     [SerializeField] Animator[] corazones;
@@ -28,6 +31,7 @@ public class JugadorNave : MonoBehaviour
     {
         Agregar(20);
         puntos = 0;
+        menu = FindObjectOfType<Menu>();
     }
     private void FixedUpdate()
     {
@@ -47,6 +51,7 @@ public class JugadorNave : MonoBehaviour
     }
     public void Disparar()
     {
+        AudioManager.PlayAudio(AudioID.DisparoAliado, this);
         intervalo = velDisparo;
         GameObject b = Requimiento();
         b.transform.position = arma.position;
@@ -62,6 +67,7 @@ public class JugadorNave : MonoBehaviour
     {
         inmune = 1f;
         vida--;
+        AudioManager.PlayAudio(AudioID.GolpeNave, this);
         jugador.DOFade(0, 0.1f).SetLoops(4, LoopType.Yoyo);
         corazones[vida].SetTrigger("Golpe");
         cam.transform.DOShakePosition(0.2F, 1, 20, 90, false, true, ShakeRandomnessMode.Harmonic);
@@ -73,6 +79,7 @@ public class JugadorNave : MonoBehaviour
     {
         puntos++;
         t.text = "x" + puntos.ToString();
+        if(puntos>maxPuntos) menu.Siguiente();
     }
     public void Agregar(int cantidad)
     {

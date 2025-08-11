@@ -5,9 +5,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using DG.Tweening;
+using Code.Audio;
 public class JugadorPlataforma : MonoBehaviour
 {
     [Header("UI")]
+    [SerializeField] Menu menu;
     [SerializeField] List<Image> corazones;
     [SerializeField] SpriteRenderer jugador;
     [SerializeField] ParticleSystem particulas;
@@ -46,6 +48,7 @@ public class JugadorPlataforma : MonoBehaviour
         teclas.transform.DOScale(new Vector3(0.8f,0.8f,0.8f), 0.5f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.OutSine).OnUpdate(MoverTeclas);
         gravedad = rd.gravityScale;
         gravedadOrg = gravedad;
+        menu = FindObjectOfType<Menu>();
     }
     public void MoverTeclas()
     {
@@ -97,9 +100,14 @@ public class JugadorPlataforma : MonoBehaviour
         }
         else gravedad = gravedadOrg;
     }
+    public void Paso()
+    {
+        AudioManager.PlayAudio(AudioID.Caminar, this);
+    }
     public void Salto()
     {
         rd.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
+        AudioManager.PlayAudio(AudioID.Jump, this);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -115,6 +123,7 @@ public class JugadorPlataforma : MonoBehaviour
                     {
                         moneda[a]++;
                         t[a].text = "x" + moneda[a].ToString();
+                        AudioManager.PlayAudio(AudioID.Tomar, this);
                         break;
                     }
                     
@@ -125,6 +134,8 @@ public class JugadorPlataforma : MonoBehaviour
         {
             Bandera bandera = collision.GetComponent<Bandera>();
             if (bandera != null) bandera.Conseguido();
+            AudioManager.PlayAudio(AudioID.Bandera, this);
+            menu.Siguiente();
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -136,6 +147,7 @@ public class JugadorPlataforma : MonoBehaviour
     }
     public void QuitarVida(Vector2 dir)
     {
+        AudioManager.PlayAudio(AudioID.Golpe, this);
         inmune = 1f;
         vida--;
         jugador.DOFade(0, 0.1f).SetLoops(4, LoopType.Yoyo);
