@@ -615,7 +615,7 @@ MonoBehaviour:
   t: {fileID: 105296591}
   pasivo: 0
   puntos: 0
-  maxPuntos: 5
+  maxPuntos: 25
   vida: 3
   jugador: {fileID: 933016945}
   corazones:

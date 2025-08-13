@@ -339,18 +339,21 @@ MonoBehaviour:
   teclas: {fileID: 1835522651}
   vida: 3
   moneda: 000000000000000000000000
-  fuerzaEmpuje: 15
+  g: {fileID: 11400000, guid: c6539e8194a5f7a47b8bef7eeb546c76, type: 2}
   an: {fileID: 255592886}
   rd: {fileID: 255592884}
   a: {fileID: 1581536747}
   b: {fileID: 2075062970}
-  vel: 40
-  velAire: 0.1
-  limVel: 30
+  bases: {fileID: 913772860}
+  vel: 8
+  velAire: 2
+  limVel: 15
   fuerzaSalto: 14
-  gravedad: 1
-  fuerzaGravedad: 8
-  deslizar: 7
+  gravedad: 0
+  aceleracion: 10
+  desaceleracion: 7
+  fuerzaGravedad: -0.2
+  velGravedad: 3
   disDet: 0.2
   contacto: 0
   piso:
@@ -359,6 +362,7 @@ MonoBehaviour:
   cam: {fileID: 519420032}
   velCamara: 4
   altura: 0
+  transicion: 0
 --- !u!212 &255592882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30950,7 +30954,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 685342249}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b8fb37aafd05d64a965d3bf456ed554, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -31032,7 +31036,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b8fb37aafd05d64a965d3bf456ed554, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -35327,7 +35331,7 @@ GameObject:
   - component: {fileID: 835305182}
   - component: {fileID: 835305181}
   - component: {fileID: 835305180}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Tilemap
   m_TagString: Lava
   m_Icon: {fileID: 0}
@@ -35358,7 +35362,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 835305178}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b8fb37aafd05d64a965d3bf456ed554, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -35950,7 +35954,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b8fb37aafd05d64a965d3bf456ed554, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -38677,6 +38681,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4820599448333142989, guid: 1bea25eac3367f4488d00aedd0faa09f, type: 3}
   m_PrefabInstance: {fileID: 997539786}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &913772859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 913772860}
+  m_Layer: 0
+  m_Name: Posicion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &913772860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913772859}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -25.5, y: -10.125, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &942898303 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4820599448333142989, guid: 1bea25eac3367f4488d00aedd0faa09f, type: 3}
@@ -56930,7 +56965,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 1474706580}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b8fb37aafd05d64a965d3bf456ed554, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -58364,7 +58399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1835522652
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -58900,7 +58935,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 2126004760}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b8fb37aafd05d64a965d3bf456ed554, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -59003,7 +59038,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 8b8fb37aafd05d64a965d3bf456ed554, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -60672,6 +60707,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 913772860}
   - {fileID: 255592883}
   - {fileID: 452815082}
   - {fileID: 1029683851}
