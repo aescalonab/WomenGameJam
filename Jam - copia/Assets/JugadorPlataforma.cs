@@ -15,6 +15,7 @@ public class JugadorPlataforma : MonoBehaviour
     [SerializeField] ParticleSystem particulas;
     [SerializeField] TextMeshProUGUI []t;
     [SerializeField] GameObject teclas;
+    [SerializeField] float pixel;
     [Header("Estadisticas")]
     [SerializeField] int vida;
     [SerializeField] int [] moneda;
@@ -49,7 +50,7 @@ public class JugadorPlataforma : MonoBehaviour
 
     void Start()
     {
-
+        an.SetLayerWeight(1, pixel);
         if (g.teclas)
         {
             teclas.SetActive(true);
@@ -185,13 +186,8 @@ public class JugadorPlataforma : MonoBehaviour
      
         if (vida <= 0)
         {
-            StartCoroutine(Reinicio());
+            menu.Reinicio();
         }
-    }
-    IEnumerator Reinicio()
-    {
-        yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     private void OnDrawGizmos()
     {

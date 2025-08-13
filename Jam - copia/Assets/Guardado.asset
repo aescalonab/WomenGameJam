@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Guardado
   m_EditorClassIdentifier: 
   transicion: 1
-  teclas: 1
+  teclas: 0
