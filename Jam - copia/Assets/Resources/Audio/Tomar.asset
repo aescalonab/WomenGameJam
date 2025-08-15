@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132566a9cbea14f5c8bc60520d9b45cb, type: 3}
+  m_Name: Tomar
+  m_EditorClassIdentifier: 
+  Clips:
+  - {fileID: 8300000, guid: fbbb5e83192e50841b9126b479b8ae92, type: 3}
+  - {fileID: 8300000, guid: 2cc241da84eee4f4ba9e856b0f6dcc74, type: 3}
+  - {fileID: 8300000, guid: ab5cf92828ce96e46ae02c2800ba280d, type: 3}
+  Volume:
+    minValue: 1
+    maxValue: 1
+  Pitch:
+    minValue: 1
+    maxValue: 1
+  Loop: 0
+  UseAdvancedOptions: 0
+  StereoPan: 0
+  Priority: 128
+  Use3DSound: 0
+  MinDistance: 1
+  MaxDistance: 500
+  DopplerLevel: 1
+  Spread: 0
+  VolumeRolloff: 0
+  ForcePlayToEnd: 0

@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Inicio.unity
+    guid: 0fcf4a44ab0edc6459a70aeee1c8ca06
+  - enabled: 1
     path: Assets/Scenes/Plataforma.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/FormaInvertida.unity
+    guid: cc55738d66ecdcd47bd4fdc75bfff151
+  - enabled: 1
+    path: Assets/Scenes/Invasores.unity
+    guid: d5cb60b5f820840468e798acb225ea3e
+  - enabled: 1
+    path: Assets/Scenes/InvasorInvertido.unity
+    guid: 2c3f005a34f875f4d958594168cef85a
+  - enabled: 1
+    path: Assets/Scenes/Serpiente.unity
+    guid: ccb57a4cea7abd441b0ffc6f52e84d8b
+  - enabled: 1
+    path: Assets/Scenes/SerInvertida.unity
+    guid: 63c22614bbab0a04d9562ceaf1880a60
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 210f24d8e192a044f86e55b1e11d4d21
   m_configObjects: {}

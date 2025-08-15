@@ -134,6 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pasivo: 1
   arm: {fileID: 0}
+  an: {fileID: 2910735913289365805}
   arma: {fileID: 423863876225936043}
   vel: 0.5
   mov:

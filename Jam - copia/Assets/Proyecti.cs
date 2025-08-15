@@ -23,7 +23,8 @@ public class Proyecti : MonoBehaviour
     {
         if(collision.gameObject.CompareTag(e))
         {
-           collision.gameObject.SetActive(false);
+            Naves n = collision.GetComponent<Naves>();
+            if (n != null) n.estallar();
            j.Puntos();
         }
         Destruir();
